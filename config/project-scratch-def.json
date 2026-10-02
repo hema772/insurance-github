@@ -1,0 +1,71 @@
+{
+  "orgName": "Insurance Claims Scratch Org",
+  "edition": "Developer",
+  "features": [
+    "Flow",
+    "ApprovalProcess",
+    "LightningWebComponents",
+    "Apex",
+    "Sharing",
+    "Queues"
+  ],
+  "settings": {
+    "orgPreferenceSettings": {
+      "s1DesktopEnabled": true,
+      "networksEnabled": true,
+      "enableS1EncryptedStoragePref2": true
+    },
+    "flowSettings": {
+      "enableFlowScreenComponents": true,
+      "enableLightningFlow": true
+    },
+    "approvalProcessSettings": {
+      "enableApprovalProcess": true
+    },
+    "lightningWebComponentsSettings": {
+      "enableLwc": true
+    },
+    "sharingSettings": {
+      "defaultAccountAccess": "Private",
+      "defaultContactAccess": "Private",
+      "defaultOpportunityAccess": "Private",
+      "defaultCaseAccess": "Private"
+    }
+  },
+  "objectSettings": {
+    "Policy__c": {
+      "allowInChatterGroups": true,
+      "allowInEmail": true,
+      "allowInFeed": true,
+      "deploymentStatus": "Deployed",
+      "description": "Multi-line insurance policy object",
+      "label": "Policy",
+      "nameField": {
+        "displayFormat": "P-{0000}",
+        "type": "AutoNumber"
+      },
+      "pluralLabel": "Policies",
+      "sharingModel": "ReadWrite",
+      "enableActivities": true,
+      "enableReports": true,
+      "enableHistory": true
+    },
+    "Claim__c": {
+      "allowInChatterGroups": true,
+      "allowInEmail": true,
+      "allowInFeed": true,
+      "deploymentStatus": "Deployed",
+      "description": "Insurance claim object",
+      "label": "Claim",
+      "nameField": {
+        "displayFormat": "C-{0000}",
+        "type": "AutoNumber"
+      },
+      "pluralLabel": "Claims",
+      "sharingModel": "ReadWrite",
+      "enableActivities": true,
+      "enableReports": true,
+      "enableHistory": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Auto</fullName>
+    <active>true</active>
+    <description>This record type is to store vechile-Auto</description>
+    <label>Auto</label>
+    <picklistValues>
+        <picklist>Policy_State__c</picklist>
+        <values>
+            <fullName>Auto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Life</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Property</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <type>Flow</type>
+    <flow>Claim_Approver_Screen_Flow</flow>
+    <label>Approve/Reject Claim</label>
+    <height>600</height>
+    <description>Review and approve or reject a claim</description>
+</QuickAction>

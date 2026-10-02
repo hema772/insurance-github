@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIN_Must_Be_17_Characters</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( RecordType.DeveloperName = &quot;Auto&quot;, LEN( VIN__c )&lt;&gt; 17)</errorConditionFormula>
+    <errorDisplayField>VIN__c</errorDisplayField>
+    <errorMessage>The Vehicle Identification Number (VIN) must be exactly 17 characters long for Auto Policies</errorMessage>
+</ValidationRule>
