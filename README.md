@@ -254,7 +254,6 @@ Built for **Smart India Hackathon 2025** — Problem Statement: *Dark Web Threat
 
 ```bash
 # Clone repository
-git clone https://github.com/ArenRedd/insurance-github.git
 cd insurance-github
 
 # Authenticate to your org
