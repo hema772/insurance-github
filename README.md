@@ -235,3 +235,44 @@ Before deploying to production, verify the following:
 ---
 
 *Run `sf test run local` to verify test coverage before deployment.*
+
+## 🔧 Troubleshooting Quick Reference
+
+### Common Issues
+
+**AutoQuoting Flow won't launch**
+- Check that the flow is active in Setup → Flows
+- Verify the Lightning Page assignment is correct
+- Ensure the user has the "Insurance Agent" permission set
+
+**PremiumCalculator returns null**
+- Validate the policy state is one of: CA, TX, NY, FL, Other
+- Check that model year is provided for Auto policies (4-digit number)
+- Confirm square footage is provided for Property policies
+- Verify policy term in months is provided for Life policies
+
+**Claim not routing to correct queue**
+- Check the Policy's RecordType is set correctly (Auto/Property/Life)
+- Ensure the Claim_Routing_Flow is triggered on Claim creation
+- Verify the three public queues exist and users have access
+
+**Adjuster dashboard shows no claims**
+- Confirm the adjuster has "Claims Adjuster Access" permission set
+- Verify sharing rules are active for the adjuster's licensed states
+- Check that claims have been created and submitted for approval
+
+**Approval process not triggering**
+- Ensure the claim amount exceeds $50,000 threshold
+- Verify the High_Value_Claim_Approval process is active
+- Check that Submission_Automation_Flow is configured correctly
+
+### Debug Steps
+
+1. Run `sf apex log --target-org <org>` to view Apex execution logs
+2. Check `Setup > Process Automation > Paused and Failed Flow Interviews`
+3. Enable debug logs for the running user, filter by `FLOW` and `APEX`
+4. Review `Setup > Managing Apps > Security` for permission set assignments
+
+---
+
+*If issues persist, contact the Claims Administration team or open a GitHub issue.*
