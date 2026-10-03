@@ -389,4 +389,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 MIT License — see [LICENSE](LICENSE) for details.
 
-Built with ☕ by [ArenRedd](https://github.com/ArenRedd) for **Anand Studio (Hogwarts)**.
