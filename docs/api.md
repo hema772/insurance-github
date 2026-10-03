@@ -174,3 +174,7 @@ wiredClaims({ error, data }) {
     }
 }
 ```
+## Contributor Notes
+
+This API documentation covers the main automation flows used by the insurance policy and claims management system. Changes to claim routing, submission automation, or related Salesforce flows should be validated in a test environment before deployment.
+
