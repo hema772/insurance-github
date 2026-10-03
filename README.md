@@ -276,3 +276,6 @@ Before deploying to production, verify the following:
 ---
 
 *If issues persist, contact the Claims Administration team or open a GitHub issue.*
+
+### Documentation Contribution
+Insurance project documentation updated.
