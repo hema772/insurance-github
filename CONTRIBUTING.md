@@ -102,4 +102,4 @@ chore: update sfdx-project.json API version
 
 ## Questions?
 
-Open a [Discussion](https://github.com/ArenRedd/insurance-github/discussions) or check existing [Issues](https://github.com/ArenRedd/insurance-github/issues).
+Open a [Discussion](https://github.com/hema772/insurance-github/discussions) or check existing [Issues](https://github.com/hema772/insurance-github/issues).
