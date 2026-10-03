@@ -279,3 +279,8 @@ Before deploying to production, verify the following:
 
 ### Documentation Contribution
 Insurance project documentation updated.
+
+## Project Maintenance
+
+The insurance policy and claims management system should be validated after changes to policies, claims, routing flows, and automation. Contributors should test their changes before deployment.
+
