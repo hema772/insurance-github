@@ -103,3 +103,109 @@ chore: update sfdx-project.json API version
 ## Questions?
 
 Open a [Discussion](https://github.com/hema772/insurance-github/discussions) or check existing [Issues](https://github.com/hema772/insurance-github/issues).
+## 🛠️ Useful Commands Reference
+
+### Quick Setup
+```bash
+# Clone and authenticate
+git clone https://github.com/YOUR_USERNAME/insurance-github.git
+cd insurance-github
+gh auth switch --user YOUR_GITHUB_USERNAME
+sf org login web --alias dev-org
+
+# Full development cycle
+sf project deploy start --target-org dev-org
+sf test run local --target-org dev-org
+
+# Check test coverage
+sf coverage:report --target-org dev-org --type ApexClass
+
+# Debug flows
+sf flow debug interview --target-org dev-org --run-id <interview-id>
+```
+
+### Common Git Workflows
+
+**Creating a new feature branch:**
+```bash
+git checkout -b feature/claim-queue-improvement main
+# ... make changes ...
+git add .
+git commit -m "feat: improve claim queue routing logic"
+git push origin feature/claim-queue-improvement
+```
+
+**Fixing a bug:**
+```bash
+git checkout -b fix/vin-validation-bug main
+# ... make changes ...
+git add .
+git commit -m "fix: correct VIN length validation for Auto policies"
+git push origin fix/vin-validation-bug
+```
+
+**Synchronizing with upstream:**
+```bash
+git remote add upstream https://github.com/hema772/insurance-github.git
+git fetch upstream
+git checkout main
+git merge upstream/main
+git push origin main
+```
+
+### IDE Settings (VS Code)
+
+**Recommended settings.json:**
+```json
+{
+  "salesforce.debugApi": true,
+  "salesforce.sfdxApi": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true
+  }
+}
+```
+
+### Environment Variables
+
+Required for local development:
+- `SFDX_CONNECTED_APP_CLIENT_ID` — Salesforce connected app client ID
+- `SFDX_CONNECTED_APP_CLIENT_SECRET` — Salesforce connected app client secret  
+- `DEV_ORG_USERNAME` — Dev org username
+- `DEV_ORG_PASSWORD` — Dev org password + security token
+
+---
+
+## 📝 Commit Message Template
+
+For consistency across contributors:
+
+```
+<type>: <subject>
+
+<body>
+
+<footer>
+```
+
+**Types:**
+- `feat` — New feature
+- `fix` — Bug fix
+- `docs` — Documentation changes
+- `style` — Formatting, missing semi colons, etc.
+- `refactor` — Refactoring existing code
+- `test` — Adding missing tests
+- `chore` — Updating build tasks, package manager configs, etc.
+
+**Example:**
+```
+feat: add VIN length validation for Property policies
+
+- Added 17-character VIN validation rule
+- Updated Property_Fields field set
+- Added test method testValidateVIN_PropertyPolicy
+
+Closes: #42
+```
