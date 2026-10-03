@@ -197,3 +197,41 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 MIT License — see [LICENSE](LICENSE) for details.
 
+
+## 📋 Deployment Checklist
+
+Before deploying to production, verify the following:
+
+### Pre-Deployment Checks
+- [ ] All Apex tests pass (target 95%+ coverage)
+- [ ] All flows are active and tested
+- [ ] Permission sets are configured correctly
+- [ ] Sharing rules are in place and tested
+- [ ] Approval processes are defined (if required)
+
+### Metadata Deployment
+- [ ] Run `sf project deploy start --target-org <org-name>`
+- [ ] Deploy only to appropriate sandbox/production
+- [ ] Validate all custom fields and objects
+- [ ] Check Record Type assignments are correct
+
+### Post-Deployment Validation
+- [ ] Test AutoQuoting flow end-to-end
+- [ ] Verify PremiumCalculator returns correct values
+- [ ] Test claim routing by policy type
+- [ ] Confirm adjuster dashboard displays correctly
+- [ ] Validate approval process entry criteria
+
+### Security Review
+- [ ] Review field-level security on all custom objects
+- [ ] Verify profile/permission set assignments
+- [ ] Check sharing rule criteria
+
+### Documentation Updates
+- [ ] Update README with any configuration changes
+- [ ] Ensure API docs reflect current implementations
+- [ ] Review and update flow interview labels if changed
+
+---
+
+*Run `sf test run local` to verify test coverage before deployment.*
