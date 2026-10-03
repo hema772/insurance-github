@@ -9,7 +9,6 @@
 
 A complete **Salesforce DX** project implementing a multi-line insurance platform for **Auto, Property, and Life** policies with automated quoting, premium calculation, claim routing, approval workflows, and a real-time adjuster dashboard.
 
-Built for **Smart India Hackathon 2025** — Problem Statement: *Dark Web Threat Actor De-anonymization* (adapted for insurance domain).
 
 ---
 
