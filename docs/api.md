@@ -95,6 +95,60 @@ Test Methods:
 
 ---
 
+---
+
+## Flow Automation Reference
+
+### Claim_Routing_Flow
+**Type**: Record-Triggered Flow
+**Object**: `Claim__c`
+**Trigger**: A record is created
+**Conditions**: None (fires on all new claims)
+**Entry Criteria**: `ISNEW() = true`
+**Output**: Assigns claim to one of three public queues based on related Policy's RecordType DeveloperName
+
+#### Queue Routing Logic
+| Policy RecordType | Queue Name | DeveloperName |
+|---|---|---|
+| Auto | Auto_Claims_Queue | Auto_Claims_Queue |
+| Property | Property_Claims_Queue | Property_Claims_Queue |
+| Life | Life_Claims_Queue | Life_Claims_Queue |
+
+#### Flow Variables
+| Variable | Type | Is Collection | Description |
+|---|---|---|---|
+| `{!varPolicyRecordType}` | Text | No | DeveloperName of the Policy's RecordType |
+| `{!varClaimId}` | Record ID | No | ID of the newly created Claim__c |
+
+#### Debug Logging
+Enable debug logs for the running user and filter by `FLOW` to trace routing decisions.
+
+---
+
+### Submission_Automation_Flow
+**Type**: Record-Triggered Flow
+**Object**: `Claim__c`
+**Trigger**: A record is created or updated
+**Conditions**: `Claim_Amount__c > 50000`
+**Entry Criteria**: `AND(ISCHANGED([Claim__c].Claim_Amount__c), [Claim__c].Claim_Amount__c > 50000)`
+**Output**: Submits the claim record to the `High_Value_Claim_Approval` approval process
+
+#### Subflow: Auto-Submission Logic
+```text
+IF Claim__c.Claim_Amount__c > 50000 AND Claim__c.Approval_Status__c != "Submitted"
+THEN
+    Submit for Approval: High_Value_Claim_Approval
+    Update Approval_Status__c = "Submitted"
+ELSE
+    Skip (not high-value or already submitted)
+```
+
+#### Monitoring
+- Check `Setup > Process Automation > Paused and Failed Flow Interviews` for stalled submissions
+- Approval history is visible on the Claim record detail page under "Approvals" related list
+
+---
+
 ## Error Handling
 
 All Apex methods follow this pattern:
